@@ -1,0 +1,2 @@
+# LidlPinger
+simple ping script
