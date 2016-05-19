@@ -6,7 +6,7 @@ COLOR 1E
 :: Wincor-Nixdorf Poland 2016
 :: Creative Commons - Jaime Villar Camacho
 :: No kasierka were harmed during execution of this script
-:: Beta 0.0.1
+:: Version 1.0
 
 :: function pinging (sub-options)
 :start
