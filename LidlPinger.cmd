@@ -5,8 +5,17 @@ COLOR 1E
 :: LidlCommander tool for Spanish Team 
 :: Wincor-Nixdorf Poland 2016
 :: Creative Commons - Jaime Villar Camacho
-:: No kasierka were harmed during the execution of this script
-:: Version 1.0
+:: No kasierka were harmed during execution of this script
+:: Beta 0.0.1
+
+:: set store at beginning of file
+:tienda
+cls
+SET /P store=Por favor escriba el numero de tienda con 4 digitos.
+ECHO.
+ECHO Si quiere cambiar la tienda pulse "c" minuscula en el menu principal.
+PAUSE
+GOTO start
 
 :: function pinging (sub-options)
 :start
@@ -17,14 +26,17 @@ ECHO +++ Por favor seleccione una opcion +++
 ECHO.
 ECHO Por favor seleccione una opcion
 ECHO.
-ECHO 1) Telefonica
-ECHO 2) VPN
-ECHO 3) Caja
-ECHO 4) Back Office
-ECHO 5) Impresora
-ECHO 0) Salir
+ECHO 1 - Telefonica
+ECHO 2 - VPN
+ECHO 3 - Caja
+ECHO 4 - Back Office
+ECHO 5 - Impresora
+ECHO c - Cambiar de tienda
+ECHO 0 - Salir
 ECHO.
-ECHO ++====================================++
+ECHO ++==================================++
+ECHO ++   Estamos en la tienda %store%    ++
+ECHO ++==================================++
 ECHO.
 
 	:: options
@@ -34,6 +46,7 @@ ECHO.
 	IF "%var%"=="3"  GOTO caja
 	IF "%var%"=="4"  GOTO bo
 	IF "%var%"=="5"	 GOTO impresora
+	IF "%var%"=="c"  GOTO tienda
 	IF "%var%"=="0"  GOTO salir
 	ECHO.
 
@@ -48,8 +61,8 @@ ECHO.
 	:telefonica
 	ECHO.
 	ECHO + (1) Ping Telefonica +
-	ECHO.
-	SET /P store=Escriba el numero de tienda con 4 digitos:
+	::ECHO.
+	::SET /P store=Escriba el numero de tienda con 4 digitos:
 	ECHO.
 	SET /P n=Escriba el numero de repeticiones del ping:
 	ECHO.
@@ -94,8 +107,9 @@ ECHO.
 	:caja
 	ECHO.
 	ECHO + (3) Ping Caja +
+	::ECHO.
+	::SET /P store=Escriba el numero de tienda con 4 digitos:
 	ECHO.
-	SET /P store=Escriba el numero de tienda con 4 digitos:
 	SET /P till=Escriba el numero de la caja con 2 digitos:
 	ECHO.
 	SET /P n=Escriba el numero de repeticiones del ping:
@@ -118,8 +132,8 @@ ECHO.
 	:bo
 	ECHO.
 	ECHO + (4) Ping Back Office +
-	ECHO.
-	SET /P store=Escriba el numero de tienda con 4 digitos:
+	::ECHO.
+	::SET /P store=Escriba el numero de tienda con 4 digitos:
 	ECHO.
 	SET /P n=Escriba el numero de repeticiones del ping:
 	ECHO.
@@ -145,8 +159,8 @@ ECHO.
 	:impresora
 	ECHO.
 	ECHO + (5) Ping Impresora +
-	ECHO.
-	SET /P store=Escriba el numero de tienda con 4 digitos:
+	::ECHO.
+	::SET /P store=Escriba el numero de tienda con 4 digitos:
 	ECHO.
 	SET /P n=Escriba el numero de repeticiones del ping:
 	ECHO.
